@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login|Page</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/js/bootstrap.min.js">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <section class="mainheader">
+        <div class="container">
+            <div class="text-center">
+                <br>
+                <h3 class="dark-grey-text mb-5"><strong style="color: crimson; font-weight: bold; font-size: larger;">LOG IN HERE</strong></h3>
+                <div class="modal-footer mx-5 pt-3 mb-1"></div>
+              </div>
+        </div>
+    </section>
+    
+    <div class="hero">
+        <div class="form-box"><br>
+            <h3 style="text-align: center; color: cornflowerblue; width: 350px;"><marquee behavior="left" direction="right"> Sign-in|Sign-up</marquee></h3>
+            <div class="button-box">
+            <div id="btn"></div>   
+            <button type="button" class="toggle-btn" onclick="login()"> Log In</button>
+            <button type="button" class="toggle-btn" onclick="register()"> Register</button>
+            </div>
+            <div class="social-icons">
+                <img src="images/whatsapp.png" >
+                <img src="images/facebook.png">
+                <img src="images/gmal1.png" >
+                <img src="images/twitter1.png">
+             </div>
+    
+             <form id="login" class="input-group"  [formGroup]="userprofileForm" (ngSubmit)="Login()" style="margin-top:20px;">
+                <input type="text" class="input-field" placeholder="User Id" FormControlName="UserId" required>
+                <input type="password" class="input-field" placeholder="Enter Password" FormControlName="EnterPassword" required>
+                <input type="checkbox" class="check-box"><span>Remember Password</span>
+                <button type="submit" class="submit-btn">Login</button>
+             </form>
+    
+             <form id="register" class="input-group"  [formGroup]="userprofileForm" (ngSubmit)="register()" style="margin-top:20px;">
+                <input type="text" class="input-field" placeholder="User Id"  FormControlName="UserId" required>
+                <input type="email" class="input-field" placeholder="Email Id"  FormControlName="EmailId" required>
+                <input type="password" class="input-field" placeholder="Enter Password" FormControlName="EnterPassword" required>
+                <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
+                <button type="submit" class="submit-btn">Register</button>
+             </form>
+            
+        </div>
+       
+    </div>
+    
+    
+    <script>
+       var x= document.getElementById("login");
+       var y= document.getElementById("register");
+       var z= document.getElementById("btn");
+    
+       function register(){
+           x.style.left="-400px";
+           y.style.left="50px";
+           z.style.left="110px";
+       }
+
+       function login(){
+           x.style.left="50px";
+           y.style.left="450px";
+           z.style.left="0px";
+       }
+    </script>
+    
+</body>
+</html>
+
+
+
